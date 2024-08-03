@@ -1,0 +1,71 @@
+<body>
+  <section>
+    <h1>Directive IF and ELSE</h1>
+    <div class="character">
+      <button (click)="changeStatus(characters[0])">Change available</button>
+      @if(characters[0].available) {
+      <p>
+        Character: <span>{{ characters[0].name }}</span>
+      </p>
+      <p>
+        Available: <span>{{ characters[0].available }}</span>
+      </p>
+      <img src="{{ characters[0].avatar }}" alt="goku imagen" />
+      } @else{
+      <p>
+        Available: <span>{{ characters[0].available }}</span>
+      </p>
+      <p>Character not available</p>
+      }
+    </div>
+  </section>
+
+  <section>
+    <h1>Directive FOR</h1>
+    <div class="container">
+      <div class="container-for">
+        @for (chara of characters; track $index) {
+        <div class="character">
+          <p>
+            Id: <span>{{ chara.id }}</span>
+          </p>
+          <p>
+            Name: <span>{{ chara.name }}</span>
+          </p>
+          <p>
+            Available: <span>{{ chara.available }}</span>
+          </p>
+          <img
+            class="images"
+            src="{{ chara.avatar }}"
+            alt="image character"
+            (click)="changeStatus(chara)"
+          />
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Event handler click</h1>
+    <div class="character" (click)="transform(index)">
+      <p>
+        Id: <span>{{ characters[index].id }}</span>
+      </p>
+      <p>
+        Character: <span>{{ characters[index].name }}</span>
+      </p>
+      <p>
+        Available: <span>{{ characters[index].available }}</span>
+      </p>
+      <div>
+        <img
+          [className]="animationClass"
+          [src]="characters[index].avatar"
+          alt="goku imagen"
+        />
+      </div>
+    </div>
+  </section>
+</body>
