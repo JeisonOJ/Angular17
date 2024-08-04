@@ -27,13 +27,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ])
   ]
 })
-export class AppComponent implements OnInit{
-  isLoading = true;
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading = false; 
-    }, 1500);
-  }
+export class AppComponent{
   title = 'Dragon ball';
 
   getTitle(string: string) {

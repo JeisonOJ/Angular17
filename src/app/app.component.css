@@ -21,6 +21,13 @@ body {
   justify-content: center;
   align-items: center;
   transform: translate(-50%, -50%);
+  flex-direction: column;
+}
+
+.loader-container h1 {
+  width: 50%;
+  margin-top: 1%;
+  
 }
 
 .loader {
