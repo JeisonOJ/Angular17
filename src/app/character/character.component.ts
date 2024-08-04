@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [],
+  imports: [AppComponent],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css',
 })
 export class CharacterComponent {
+  @Input() title = '';
+  @Output() titleChange = new EventEmitter<string>();
+
   index = 0;
   animationClass = 'fade-in';
+  style = '';
   characters = [
     {
       id: 1,
@@ -58,6 +63,9 @@ export class CharacterComponent {
         this.index++;
       }
     }, 300);
-    
+  }
+  changeTitle() {
+    this.style = 'display: none';
+    this.titleChange.emit('Dragon Ball Z');
   }
 }
