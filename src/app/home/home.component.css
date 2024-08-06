@@ -1,0 +1,45 @@
+.home-container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .hero-image {
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto;
+  }
+
+  .active {
+    font-weight: bold;
+    color: red;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .feature {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .cta {
+    margin-top: 30px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #3700b3;
+  }
+  

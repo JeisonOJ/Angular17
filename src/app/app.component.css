@@ -4,6 +4,35 @@
   box-sizing: border-box;
 }
 
+
+
+header{
+  display: flex;
+  justify-content: space-evenly;
+
+  nav{
+    display: flex;
+    align-items: center;
+  }
+
+  ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    gap: 15%;
+  }
+  a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+}
+
+.active-link{
+  font-weight: bold;
+  color: #D2691E !important;
+}
+
 body {
   font-family: Arial, sans-serif;
   position: relative;

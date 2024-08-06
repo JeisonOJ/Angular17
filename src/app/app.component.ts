@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CharacterComponent } from "./character/character.component";
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CharacterComponent],
+  imports: [RouterOutlet, CharacterComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations: [
@@ -28,7 +28,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class AppComponent{
-  title = 'Dragon ball';
+  title = 'Dragon ball Z';
 
   getTitle(string: string) {
     this.title = string;
