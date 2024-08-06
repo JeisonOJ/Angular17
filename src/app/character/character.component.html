@@ -3,7 +3,6 @@
 </div>
 
 <body>
-  
   <section>
     <h1>Directive IF and ELSE</h1>
     <div class="character">
@@ -15,7 +14,11 @@
       <p>
         Available: <span>{{ characters[0].available }}</span>
       </p>
-      <img src="{{ characters[0].avatar }}" alt="goku imagen" />
+      <div class="character-image">
+        <!-- <img ngSrc="{{ characters[0].avatar }}" alt="goku imagen" width="1000" height="1000" /> -->
+        <img ngSrc="{{ characters[0].avatar }}" alt="goku imagen" fill />
+      </div>
+
       } @else{
       <p>
         Available: <span>{{ characters[0].available }}</span>
@@ -40,12 +43,15 @@
           <p>
             Available: <span>{{ chara.available }}</span>
           </p>
-          <img
-            class="images"
-            src="{{ chara.avatar }}"
-            alt="image character"
-            (click)="changeStatus(chara)"
-          />
+          <div class="character-image-small">
+            <img
+              class="images"
+              ngSrc="{{ chara.avatar }}"
+              alt="image character"
+              fill
+              (click)="changeStatus(chara)"
+            />
+          </div>
         </div>
         }
       </div>
@@ -64,11 +70,12 @@
       <p>
         Available: <span>{{ characters[index].available }}</span>
       </p>
-      <div>
+      <div class="character-image">
         <img
           [className]="animationClass"
-          [src]="characters[index].avatar"
+          [ngSrc]="characters[index].avatar"
           alt="goku imagen"
+          fill
         />
       </div>
     </div>

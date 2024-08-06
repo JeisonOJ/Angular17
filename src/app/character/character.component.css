@@ -39,8 +39,21 @@ button{
   margin: 20px;
 }
 
+.character-image{
+  position: relative;
+  width: 250px;
+  height: 500px;
+  
+}
+
+.character-image-small{
+  position: relative;
+  width: 100px;
+  height: 150px;
+  
+}
+
 img {
-  max-height: 500px;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
 }

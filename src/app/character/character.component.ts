@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [AppComponent],
+  imports: [AppComponent, NgOptimizedImage],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css',
 })
