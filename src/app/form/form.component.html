@@ -8,7 +8,7 @@
     </p>
   </div>
   <div class="card-content">
-    <form class="grid gap-6" (ngSubmit)="onSubmit()">
+    <form class="grid gap-6" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="grid grid-cols-1 gap-4">
         <div class="grid gap-2">
           <label for="name" class="text-sm font-medium text-gray-300"
@@ -17,7 +17,7 @@
           <input
             id="name"
             type="text"
-            [(ngModel)]="name"
+            formControlName="name"
             name="name"
             placeholder="Enter character name"
             class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
@@ -28,7 +28,7 @@
           <label class="text-sm font-medium text-gray-300">Image</label>
           <input
             id="image"
-            [(ngModel)]="imageUrl"
+            formControlName="imageUrl"
             placeholder="Enter imageUrl description"
             type="text"
             name="imageUrl"
@@ -41,7 +41,7 @@
           >
           <input
             id="image"
-            [(ngModel)]="imageUrl"
+            formControlName="imageUrl"
             type="file"
             name="imageUrl"
             class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
@@ -55,7 +55,7 @@
           >
           <select
             id="race"
-            [(ngModel)]="available"
+            formControlName="available"
             name="available"
             class="select bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
           >
@@ -70,13 +70,13 @@
           class="textarea bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
         >
           <p class="text-gray-400">
-            Name: <span>{{ name }}</span>
+            Name: <span>{{ form.value.name }}</span>
           </p>
           <p class="text-gray-400">
-            Image: <span>{{ imageUrl }}</span>
+            Image: <span>{{ form.value.imageUrl }}</span>
           </p>
           <p class="text-gray-400">
-            Available: <span>{{ available }}</span>
+            Available: <span>{{ form.value.available }}</span>
           </p>
         </div>
       </div>

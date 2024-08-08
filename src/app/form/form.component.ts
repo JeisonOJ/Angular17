@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  name = '';
-  imageUrl = '';
-  available = false;
+
+  form = new FormGroup({
+    name: new FormControl(''),
+    imageUrl: new FormControl(''),
+    available: new FormControl(false)
+  });
 
   onSubmit() {
-    console.log(`Form submitted with ${this.name}, ${this.imageUrl}, ${this.available}`);
+    console.log(`Form submitted with ${this.form.value.name}, ${this.form.value.imageUrl}, ${this.form.value.available}`);
   }
 }
