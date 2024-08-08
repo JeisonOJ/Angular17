@@ -1,0 +1,102 @@
+<div
+  class="card max-w-xl mx-auto p-6 sm:p-8 md:p-10 bg-gray-800 border border-gray-700 rounded-lg shadow-lg"
+>
+  <div class="card-header mb-4">
+    <h2 class="text-3xl font-bold text-gray-100">Add New Character</h2>
+    <p class="text-gray-400">
+      Fill out the details below to create a new character.
+    </p>
+  </div>
+  <div class="card-content">
+    <form class="grid gap-6">
+      <div class="grid grid-cols-1 gap-4">
+        <div class="grid gap-2">
+          <label for="name" class="text-sm font-medium text-gray-300"
+            >Name</label
+          >
+          <input
+            id="name"
+            type="text"
+            [(ngModel)]="name"
+            name="name"
+            placeholder="Enter character name"
+            class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+          />
+        </div>
+        <div class="grid gap-2">
+          <label class="text-sm font-medium text-gray-300">Image</label>
+          <input
+            id="image"
+            [(ngModel)]="imageUrl"
+            placeholder="Enter imageUrl description"
+            type="text"
+            name="imageUrl"
+            class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+          />
+        </div>
+        <!-- <div class="grid gap-2">
+          <label class="text-sm font-medium text-gray-300"
+          >Image</label
+          >
+          <input
+            id="image"
+            [(ngModel)]="imageUrl"
+            type="file"
+            name="imageUrl"
+            class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+          />
+        </div> -->
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="grid gap-2">
+          <label for="race" class="text-sm font-medium text-gray-300"
+            >Available</label
+          >
+          <select
+            id="race"
+            [(ngModel)]="available"
+            name="available"
+            class="select bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+          >
+            <option>True</option>
+            <option>False</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-medium text-gray-300"
+          >Preview</label
+        >
+        <div
+          class="textarea bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+        >
+          <p class="text-gray-400">Name: <span>{{name}}</span></p>
+          <p class="text-gray-400">Image: <span>{{imageUrl}}</span></p>
+          <p class="text-gray-400">Available: <span>{{available}}</span></p>
+        </div>
+      </div>
+      
+      <!-- <div class="grid gap-2">
+        <label for="level" class="text-sm font-medium text-gray-300"
+          >Level</label
+        >
+        <input
+          id="level"
+          type="number"
+          placeholder="Enter character level"
+          class="input bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
+        />
+      </div> -->
+    </form>
+  </div>
+  <div class="card-footer mt-6">
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        class="button bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+      >
+        Create Character
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,28 +1,34 @@
 <div class="home-container">
-    <h1>Angular 18 Practice</h1>
-    <p>Practice Angular with Dragon ball Z</p>
-  
-    <div class="hero-image">
-      <img ngSrc="homeImage.jpg" alt="Dragon Ball Z" width="600" height="300" priority/>
-    </div>
-  
-    <section class="features">
-      <div class="feature">
-        <h2>Angular Topics</h2>
-        <p>{{angularTopics}}</p>
-      </div>
-      <div class="feature">
-        <h2>Dragon ball Z characters</h2>
-        <p>Explore characters</p>
-      </div>
-      <div class="feature">
-        <h2>Events and animations</h2>
-        <p>Handle events and add animations</p>
-      </div>
-    </section>
-  
-    <div class="cta">
-      <button routerLink="/character" class="cta-button">Go to the characters</button>
-    </div>
+  <h1>Angular 18 Practice</h1>
+  <p>Practice Angular with Dragon ball Z</p>
+
+  <div class="hero-image">
+    <img
+      ngSrc="homeImage.jpg"
+      alt="Dragon Ball Z"
+      fill
+      priority
+    />
   </div>
-  
+
+  <section class="features">
+    <div class="feature">
+      <h2>Angular Topics</h2>
+      <p>{{ angularTopics }}</p>
+    </div>
+    <div class="feature">
+      <h2>Dragon ball Z characters</h2>
+      <p>Explore characters</p>
+    </div>
+    <div class="feature">
+      <h2>Events and animations</h2>
+      <p>Handle events and add animations</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <button routerLink="/character" class="cta-button">
+      Go to the characters
+    </button>
+  </div>
+</div>

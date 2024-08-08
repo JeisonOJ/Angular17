@@ -1,13 +1,16 @@
 .home-container {
     text-align: center;
     color: #fff;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
   .hero-image {
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto;
+    width: 100%;
+    position: relative;
+    height: 420px;
+    img{
+      margin: auto;
+    }
   }
 
   .active {

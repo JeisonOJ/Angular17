@@ -1,25 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
 header{
   display: flex;
   justify-content: space-evenly;
+  height: 10vh;
+  align-items: center;
+
+  h1{
+    width: 50%;
+  }
 
   nav{
     display: flex;
     align-items: center;
+    width: 50%;
   }
 
   ul{
     display: flex;
     list-style: none;
-    justify-content: space-evenly;
-    gap: 15%;
+    justify-content: center;
+    gap: 4%;
+    width: 100%;
   }
   a{
     text-decoration: none;
@@ -38,6 +38,9 @@ body {
   position: relative;
   height: 90vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader-container {
