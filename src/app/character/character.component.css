@@ -1,9 +1,9 @@
-body{
+body {
   display: flex;
   justify-content: center;
 }
 
-section{
+section {
   border: 1px solid white;
   width: 33%;
 }
@@ -12,20 +12,21 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-.button-container{
+.character-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
   text-align: center;
-  
 }
 
-.button{
-  
+.button {
   margin: 1% 1%;
-  
 }
-.container-for{
+.container-for {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -39,18 +40,16 @@ section{
   margin: 20px;
 }
 
-.character-image{
+.character-image {
   position: relative;
   width: 250px;
   height: 500px;
-  
 }
 
-.character-image-small{
+.character-image-small {
   position: relative;
   width: 100px;
   height: 150px;
-  
 }
 
 img {
@@ -58,7 +57,7 @@ img {
   animation-timing-function: ease-in-out;
 }
 
-.images{
+.images {
   height: 150px;
 }
 
@@ -89,4 +88,3 @@ img {
 .character img.fade-out {
   animation-name: fadeOut;
 }
-

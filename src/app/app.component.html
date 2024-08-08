@@ -1,46 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-  </head>
-  <header>
-    <div class="video-background">
-      <div class="video-foreground">
-        <img src="dbzback.png" alt="dbz">
-      </div>
+<header>
+  <div class="video-background">
+    <div class="video-foreground">
+      <img src="dbzback.png" alt="dbz" />
     </div>
-    
-    <h1>{{ title }}</h1>
-    <nav>
-      <ul>
-        <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
-        <li><a routerLink="/character" routerLinkActive="active-link">Character</a></li>
-        <li><a routerLink="/form" routerLinkActive="active-link">Add character</a></li>
-      </ul>
-    </nav>
-  </header>
-  <body>
-    @defer (on viewport) {
-      <router-outlet @fadeInOut></router-outlet>
-    <!-- <app-character
+  </div>
+
+  <h1>{{ titlePage }}</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
+      <li>
+        <a routerLink="/character" routerLinkActive="active-link">Character</a>
+      </li>
+      <li>
+        <a routerLink="/form" routerLinkActive="active-link">Add character</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  @defer (on viewport) {
+  <router-outlet @fadeInOut></router-outlet>
+  <!-- <app-character
       @fadeInOut
       (titleChange)="getTitle($event)"
       [title]="title"
     ></app-character> -->
 
-    }@placeholder {
-    <h1>placeholder...</h1>
-    }@loading(minimum 5s) {
-    <div class="loader-container" @fadeInOut>
-      <div class="loader" @fadeInOut></div>
-      <h1>
-        Loading with directive "defer" allows loading certain content or
-        components only when they are needed.
-      </h1>
-    </div>
-    }
-  </body>
-</html>
-
+  }@placeholder {
+  <h1>placeholder...</h1>
+  }@loading(minimum 5s) {
+  <div class="loader-container" @fadeInOut>
+    <div class="loader" @fadeInOut></div>
+    <h1>
+      Loading with directive "defer" allows loading certain content or
+      components only when they are needed.
+    </h1>
+  </div>
+  }
+</main>

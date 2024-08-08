@@ -1,12 +1,16 @@
 <!-- <div class="button-container">
   <button (click)="changeTitle()" [style]="style">Change title (Output)</button>
 </div> -->
-
-<body>
+<div class="character-container">
   <section>
     <h1>Directive IF and ELSE</h1>
     <div class="character">
-      <button (click)="changeStatus(characters[0])" class="button text-white py-2 px-4 rounded-lg">Change available</button>
+      <button
+        (click)="changeStatus(characters[0])"
+        class="button text-white py-2 px-4 rounded-lg"
+      >
+        Change available
+      </button>
       @if(characters[0].available) {
       <p>
         Character: <span>{{ characters[0].name }}</span>
@@ -80,4 +84,4 @@
       </div>
     </div>
   </section>
-</body>
+</div>

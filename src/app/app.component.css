@@ -36,9 +36,8 @@ header{
   color: var(--primary) !important;
 }
 
-body {
+main {
   font-family: Arial, sans-serif;
-  position: relative;
   height: 90vh;
   width: 100%;
   display: flex;

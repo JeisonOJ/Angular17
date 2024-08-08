@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CharacterComponent } from "./character/character.component";
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -28,9 +29,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class AppComponent{
-  title = 'Dragon ball Z';
+  titlePage = '';
 
-  getTitle(string: string) {
-    this.title = string;
+  constructor(private title: Title) {}
+
+  ngOnInit() {
+    this.title.setTitle('Dragon Ball Z'); 
+    this.titlePage = this.title.getTitle(); 
   }
+
 }
