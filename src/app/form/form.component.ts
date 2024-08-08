@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -11,9 +11,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class FormComponent {
 
   form = new FormGroup({
-    name: new FormControl(''),
-    imageUrl: new FormControl(''),
-    available: new FormControl(false)
+    name: new FormControl('',Validators.required),
+    // email: new FormControl('',[Validators.required, Validators.email]),
+    imageUrl: new FormControl('',Validators.required),
+    available: new FormControl()
   });
 
   onSubmit() {

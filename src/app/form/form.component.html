@@ -94,9 +94,15 @@
       </div> -->
       <div class="card-footer mt-6">
         <div class="flex justify-end">
-          <button type="submit" class="button text-white py-2 px-4 rounded-lg">
+          @if(!form.valid){
+          <button [disabled]="!form.valid" type="submit" class="button text-white py-2 px-4 rounded-lg disabled">
             Create Character
           </button>
+          }@else {
+            <button type="submit" class="button text-white py-2 px-4 rounded-lg">
+              Create Character
+            </button>
+          }
         </div>
       </div>
     </form>

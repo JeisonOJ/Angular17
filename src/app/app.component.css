@@ -82,3 +82,42 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* para asegurarte de que el video esté detrás del contenido */
+  overflow: hidden;
+}
+
+.video-foreground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* para que los usuarios no puedan interactuar con el video */
+}
+
+.video-foreground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+  z-index: 1;
+}
+
+.video-foreground img {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  filter: brightness(30%); /* Ajusta el porcentaje según la intensidad deseada */
+}
+
