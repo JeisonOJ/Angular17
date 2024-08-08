@@ -6,7 +6,7 @@
   <section>
     <h1>Directive IF and ELSE</h1>
     <div class="character">
-      <button (click)="changeStatus(characters[0])" class="button bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Change available</button>
+      <button (click)="changeStatus(characters[0])" class="button text-white py-2 px-4 rounded-lg">Change available</button>
       @if(characters[0].available) {
       <p>
         Character: <span>{{ characters[0].name }}</span>

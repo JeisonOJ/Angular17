@@ -36,13 +36,7 @@
   .cta-button {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    cursor: pointer;
+    
   }
   
-  .cta-button:hover {
-    background-color: #3700b3;
-  }
   

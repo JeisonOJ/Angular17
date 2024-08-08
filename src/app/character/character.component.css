@@ -20,11 +20,11 @@ section{
   
 }
 
-button{
+.button{
   
   margin: 1% 1%;
+  
 }
-
 .container-for{
   display: flex;
   flex-wrap: wrap;

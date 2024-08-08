@@ -12,4 +12,8 @@ export class FormComponent {
   name = '';
   imageUrl = '';
   available = false;
+
+  onSubmit() {
+    console.log(`Form submitted with ${this.name}, ${this.imageUrl}, ${this.available}`);
+  }
 }

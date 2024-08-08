@@ -4,6 +4,8 @@
 
 :root{
     color-scheme: light dark;
+    --primary: #D2691E;
+    --hover: #e07b39;
 }
 
 h1{
@@ -11,4 +13,12 @@ h1{
     font-weight: 700;
     color: #fff;
     text-align: center;
+}
+
+button{
+    background-color: var(--primary) !important;
+}
+
+button:hover{
+    background-color: var(--hover) !important;
 }
