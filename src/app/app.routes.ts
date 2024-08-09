@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { CharacterComponent } from './character/character.component';
-import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
+import { CharacterComponent } from './components/character/character.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormComponent } from './components/form/form.component';
+
 
 export const routes: Routes = [
     {
