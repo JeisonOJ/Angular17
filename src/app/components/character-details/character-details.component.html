@@ -1,0 +1,31 @@
+<div class="card w-full max-w-2xl grid grid-cols-2 gap-6 p-6 bg-gray-800 border border-gray-700 rounded-lg shadow-lg">
+  <div>
+    <img
+      [src]="character?.avatar"
+      alt="Character Image"
+      width="320"
+      height="480"
+      class="rounded-lg object-cover"
+      style="object-fit: cover"
+    />
+  </div>
+  <div class="grid gap-2">
+    <div class="grid gap-1">
+      <h3 class="text-xl font-semibold">Character details</h3>
+      <div class="text-muted-foreground bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2">
+        Name: <span>{{ character?.name }} and id: {{character?.id}}</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6">
+        <img src="favicon.ico" alt="icono" />
+      </div>
+      <div>
+        <div class="text-muted-foreground bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2">
+          Available: <span>{{ character?.available }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

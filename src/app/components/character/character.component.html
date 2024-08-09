@@ -11,7 +11,12 @@
       >
         Change available
       </button>
+
       @if(characters[0].available) {
+      <a
+        [routerLink]="['/details', characters[0].id]"
+        ><button class="button text-white py-2 px-4 rounded-lg">Show details</button>
+      </a>
       <p>
         Character: <span>{{ characters[0].name }}</span>
       </p>

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Character } from '../models/character';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterServiceService {
 
-  characters = [
+  characters: Character[] = [
     {
       id: 1,
       name: 'Goku',
@@ -38,12 +39,12 @@ export class CharacterServiceService {
     },
   ];
 
-  getCharacters() {
+  getCharacters():Character[] {
     return this.characters;
   }
-  getCharacterById(id: number) {  
+  getCharacterById(id: number):Character | undefined {  
     return this.characters.find(character => character.id === id);
   }
 
-  constructor() { }
+  
 }

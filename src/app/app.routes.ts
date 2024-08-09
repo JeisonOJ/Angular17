@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { CharacterComponent } from './components/character/character.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormComponent } from './components/form/form.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 
 export const routes: Routes = [
@@ -23,7 +24,12 @@ export const routes: Routes = [
     },
     {
         path: 'form',
-        title: 'form',
+        title: 'Form',
         component: FormComponent
+    },
+    {
+        path: 'details/:id',
+        title: 'Details',
+        component: CharacterDetailsComponent
     }
 ];

@@ -2,23 +2,25 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { AppComponent } from '../../app.component';
 import { CharacterServiceService } from '../../services/character-service.service';
+import { Character } from '../../models/character';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [AppComponent, NgOptimizedImage],
+  imports: [AppComponent, NgOptimizedImage , RouterLink],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css',
 })
 export class CharacterComponent {
-  @Input() title = '';
-  @Output() titleChange = new EventEmitter<string>();
-
+  // @Input() title = '';
+  // @Output() titleChange = new EventEmitter<string>();
+  
   index = 0;
   animationClass = 'fade-in';
   style = '';
-  characters: any[] = [];
-
+  @Input() characters: Character[] = [];
+  
   constructor(private characterService: CharacterServiceService) {
     this.characters = this.characterService.getCharacters();
   }
@@ -39,8 +41,8 @@ export class CharacterComponent {
       }
     }, 300);
   }
-  changeTitle() {
-    this.style = 'display: none';
-    this.titleChange.emit('Dragon Ball Z');
-  }
+  // changeTitle() {
+  //   this.style = 'display: none';
+  //   this.titleChange.emit('Dragon Ball Z');
+  // }
 }
