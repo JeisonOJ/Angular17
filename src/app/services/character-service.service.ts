@@ -46,5 +46,10 @@ export class CharacterServiceService {
     return this.characters.find(character => character.id === id);
   }
 
+  createCharacter(character: Character): Character {
+    this.characters.push(character);
+    return character;
+  }
+
   
 }

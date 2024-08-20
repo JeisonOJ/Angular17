@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Character } from '../../models/character';
+import { CharacterServiceService } from '../../services/character-service.service';
 
 @Component({
   selector: 'app-form',
@@ -14,10 +16,20 @@ export class FormComponent {
     name: new FormControl('',Validators.required),
     // email: new FormControl('',[Validators.required, Validators.email]),
     imageUrl: new FormControl('',Validators.required),
-    available: new FormControl()
+    available: new FormControl(true)
   });
-
+  character: Character|undefined;
+  characterService: CharacterServiceService = inject(CharacterServiceService)
   onSubmit() {
-    console.log(`Form submitted with ${this.form.value.name}, ${this.form.value.imageUrl}, ${this.form.value.available}`);
+    this.character = {
+      id: 6,
+      name: this.form.value.name??'',
+      avatar: this.form.value.imageUrl??'',
+      available: this.form.value.available??true
+    };
+    ;
+    if(this.characterService.createCharacter(this.character)){
+      alert("created")
+    }
   }
 }

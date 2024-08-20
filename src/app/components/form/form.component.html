@@ -50,17 +50,17 @@
       </div>
       <div class="grid grid-cols-1 gap-4">
         <div class="grid gap-2">
-          <label for="race" class="text-sm font-medium text-gray-300"
+          <label for="available" class="text-sm font-medium text-gray-300"
             >Available</label
           >
           <select
-            id="race"
+            id="available"
             formControlName="available"
             name="available"
             class="select bg-gray-700 text-gray-100 border border-gray-600 rounded-lg p-2"
           >
-            <option>True</option>
-            <option>False</option>
+          <option [value]="true">True</option>
+          <option [value]="false">False</option>
           </select>
         </div>
       </div>
