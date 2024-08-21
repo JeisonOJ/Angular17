@@ -22,11 +22,18 @@ export class CharacterComponent {
   @Input() characters: Character[] = [];
   
   constructor(private characterService: CharacterServiceService) {
-    this.characters = this.characterService.getCharacters();
+    this.characterService.getCharacters().then((characters) => {
+      this.characters = characters;
+      console.log(characters[0].gender==='Male');
+    });
   }
 
-  changeStatus(character: any) {
-    character.available = !character.available;
+  // changeStatus(character: Character) {
+  //   character.available = !character.available;
+  // }
+
+  showNextCharacter(index: number): void { 
+    this.transform(this.index);
   }
 
   transform(index: number): void {

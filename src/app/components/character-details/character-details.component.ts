@@ -16,6 +16,9 @@ export class CharacterDetailsComponent {
 
   constructor(characterService: CharacterServiceService) {
     const idCharacter = Number(this.route.snapshot.params['id']);
-    this.character = characterService.getCharacterById(idCharacter);
+    characterService.getCharacterById(idCharacter)
+      .then((character: Character | undefined) => {
+        this.character = character;
+      });
   }
 }

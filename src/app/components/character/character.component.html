@@ -6,33 +6,35 @@
     <h1>Directive IF and ELSE</h1>
     <div class="character">
       <button
-        (click)="changeStatus(characters[0])"
+        (click)="showNextCharacter(index)"
         class="button text-white py-2 px-4 rounded-lg"
       >
-        Change available
+        Show next character
       </button>
 
-      @if(characters[0].available) {
-      <a
-        [routerLink]="['/details', characters[0].id]"
-        ><button class="button text-white py-2 px-4 rounded-lg">Show details</button>
+      @if(characters.length > 0) { @if( characters[index].gender === 'Male' ) {
+      <p>Character is a male</p>
+      }@else{
+      <p>Character is a female</p>
+      }
+      <a [routerLink]="['/details', characters[index].id]"
+        ><button class="button text-white py-2 px-4 rounded-lg">
+          Show details
+        </button>
       </a>
       <p>
-        Character: <span>{{ characters[0].name }}</span>
+        Character: <span>{{ characters[index].name }}</span>
       </p>
       <p>
-        Available: <span>{{ characters[0].available }}</span>
+        Race: <span>{{ characters[index].race }}</span>
       </p>
       <div class="character-image">
         <!-- <img ngSrc="{{ characters[0].avatar }}" alt="goku imagen" width="1000" height="1000" /> -->
-        <img ngSrc="{{ characters[0].avatar }}" alt="goku imagen" fill />
+        <img ngSrc="{{ characters[index].image }}" alt="goku imagen" [className]="animationClass" fill />
       </div>
 
       } @else{
-      <p>
-        Available: <span>{{ characters[0].available }}</span>
-      </p>
-      <p>Character not available</p>
+      <p>No characters available</p>
       }
     </div>
   </section>
@@ -50,15 +52,15 @@
             Name: <span>{{ chara.name }}</span>
           </p>
           <p>
-            Available: <span>{{ chara.available }}</span>
+            gender: <span>{{ chara.gender }}</span>
           </p>
           <div class="character-image-small">
             <img
               class="images"
-              ngSrc="{{ chara.avatar }}"
+              ngSrc="{{ chara.image }}"
               alt="image character"
               fill
-              (click)="changeStatus(chara)"
+              
             />
           </div>
         </div>
@@ -69,7 +71,9 @@
 
   <section>
     <h1>Event handler click</h1>
-    <div class="character" (click)="transform(index)">
+    <!-- <input type="search" placeholder="search" #filter> -->
+    @if ( characters.length > 0 ) {
+    <div class="character">
       <p>
         Id: <span>{{ characters[index].id }}</span>
       </p>
@@ -77,16 +81,19 @@
         Character: <span>{{ characters[index].name }}</span>
       </p>
       <p>
-        Available: <span>{{ characters[index].available }}</span>
+        Gender: <span>{{ characters[index].gender }}</span>
       </p>
       <div class="character-image">
         <img
           [className]="animationClass"
-          [ngSrc]="characters[index].avatar"
+          [ngSrc]="characters[index].image"
           alt="goku imagen"
           fill
         />
       </div>
     </div>
+    }@else {
+    <p>No characters available</p>
+    }
   </section>
 </div>

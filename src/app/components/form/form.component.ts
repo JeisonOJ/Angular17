@@ -21,15 +21,15 @@ export class FormComponent {
   character: Character|undefined;
   characterService: CharacterServiceService = inject(CharacterServiceService)
   onSubmit() {
-    this.character = {
-      id: 6,
-      name: this.form.value.name??'',
-      avatar: this.form.value.imageUrl??'',
-      available: this.form.value.available??true
-    };
-    ;
-    if(this.characterService.createCharacter(this.character)){
-      alert("created")
-    }
+    // this.character = {
+    //   id: 6,
+    //   name: this.form.value.name??'',
+    //   avatar: this.form.value.imageUrl??'',
+    //   available: this.form.value.available??true
+    // };
+    // ;
+    // if(this.characterService.createCharacter(this.character)){
+    //   alert("created")
+    // }
   }
 }
