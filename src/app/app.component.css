@@ -1,8 +1,8 @@
 header{
-  display: flex;
+  /* display: flex;
   justify-content: space-evenly;
   height: 10vh;
-  align-items: center;
+  align-items: center; */
 
   h1{
     width: 50%;
@@ -36,14 +36,14 @@ header{
   color: var(--primary) !important;
 }
 
-main {
+/* main {
   font-family: Arial, sans-serif;
   height: 90vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .loader-container {
   position: absolute;

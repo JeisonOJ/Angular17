@@ -1,8 +1,8 @@
 <!-- <div class="button-container">
   <button (click)="changeTitle()" [style]="style">Change title (Output)</button>
 </div> -->
-<div class="character-container">
-  <section>
+<div class="flex justify-center items-center w-[1000px] max-h-[600px]">
+  <section class="flex justify-center items-center flex-col h-full">
     <h1>Directive IF and ELSE</h1>
     <div class="character">
       <button
@@ -39,12 +39,12 @@
     </div>
   </section>
 
-  <section>
+  <section class="flex justify-center items-center flex-col h-full">
     <h1>Directive FOR</h1>
-    <div class="container">
-      <div class="container-for">
+    <div class="flex justify-center items-center w-full">
+      <div class="flex flex-wrap">
         @for (chara of characters; track $index) {
-        <div class="character">
+        <div class="character w-[20%]">
           <p>
             Id: <span>{{ chara.id }}</span>
           </p>
@@ -69,9 +69,9 @@
     </div>
   </section>
 
-  <section>
-    <h1>Event handler click</h1>
-    <!-- <input type="search" placeholder="search" #filter> -->
+  <section class="flex justify-center items-center flex-col h-full">
+    <h1>Search</h1>
+    <input type="search" placeholder="search" #filter (input)="searchCharacters(filter.value)"  class="bg-white text-gray-800 placeholder-gray-500 rounded-md p-1 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow">
     @if ( characters.length > 0 ) {
     <div class="character">
       <p>

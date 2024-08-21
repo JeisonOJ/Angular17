@@ -9,15 +9,20 @@ export class CharacterServiceService {
   private url = 'https://dragonball-api.com/api/characters';
   characters: Character[] = []
 
-  async getCharacters():Promise<Character[]> {
-    const response = await fetch(this.url);
-    const data: API = await response.json();
-    this.characters = data.items ?? [];
-    return this.characters;
+  async getCharacters(name:string = ''):Promise<Character[]> {
+    if(name === '') {
+      const response = await fetch(this.url);
+      const data: API = await response.json();
+      this.characters = data.items ?? [];
+      return this.characters;
+    }else{
+      const response = await fetch(`${this.url}?name=${name}`);
+      const data: Character[] = await response.json();
+      this.characters = data ?? [];
+      return this.characters;
+    }
+    
   }
-  // getCharacterById(id: number):Character | undefined {  
-  //   return this.characters.find(character => character.id === id);
-  // }
 
   async getCharacterById(id: number):Promise<Character | undefined> {
     const response = await fetch(`${this.url}/${id}`);

@@ -5,18 +5,8 @@ body {
 
 section {
   border: 1px solid white;
-  width: 33%;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.character-container {
-  display: flex;
-  justify-content: center;
+  padding: 1%;
+  
 }
 
 .button-container {
@@ -26,39 +16,29 @@ section {
 .button {
   margin: 1% 1%;
 }
-.container-for {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
 
 .character {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
 }
 
 .character-image {
   position: relative;
-  width: 250px;
-  height: 500px;
+  width: 11rem;
+  height: 25rem;
 }
 
 .character-image-small {
   position: relative;
-  width: 100px;
-  height: 150px;
+  width: 5rem;
+  height: 10rem;
 }
 
 img {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-}
-
-.images {
-  height: 150px;
 }
 
 /* Animaciones */

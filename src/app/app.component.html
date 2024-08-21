@@ -1,41 +1,37 @@
-<header>
+<header class="flex justify-evenly items-center p-8">
   <div class="video-background">
     <div class="video-foreground">
       <img src="dbzback.png" alt="dbz" />
     </div>
   </div>
 
-  <h1>{{ titlePage }}</h1>
-  <nav>
-    <ul>
-      <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
-      <li>
-        <a routerLink="/character" routerLinkActive="active-link">Character</a>
-      </li>
-      <li>
-        <a routerLink="/form" routerLinkActive="active-link">Add character</a>
-      </li>
+  <h1 class="text-white">{{ titlePage }}</h1>
+  <nav class="flex justify-center mt-4">
+    <ul class="flex space-x-4">
+      <li><a routerLink="/home" routerLinkActive="active-link" class="text-white">Home</a></li>
+      <li><a routerLink="/character" routerLinkActive="active-link" class="text-white">Character</a></li>
+      <li><a routerLink="/form" routerLinkActive="active-link" class="text-white">Add character</a></li>
     </ul>
   </nav>
 </header>
-<main>
+<main class="h-[80vh] max-h-[80vh]">
   @defer (on viewport) {
-  <router-outlet @fadeInOut></router-outlet>
-  <!-- <app-character
-      @fadeInOut
-      (titleChange)="getTitle($event)"
-      [title]="title"
-    ></app-character> -->
+    <router-outlet @fadeInOut></router-outlet>
+    <!-- <app-character
+        @fadeInOut
+        (titleChange)="getTitle($event)"
+        [title]="title"
+      ></app-character> -->
 
   }@placeholder {
-  <h1>placeholder...</h1>
+    <h1>placeholder...</h1>
   }@loading(minimum 1s) {
-  <div class="loader-container" @fadeInOut>
-    <div class="loader" @fadeInOut></div>
-    <h1>
-      Loading with directive "defer" allows loading certain content or
-      components only when they are needed.
-    </h1>
-  </div>
+    <div class="loader-container" @fadeInOut>
+      <div class="loader" @fadeInOut></div>
+      <h1>
+        Loading with directive "defer" allows loading certain content or
+        components only when they are needed.
+      </h1>
+    </div>
   }
 </main>

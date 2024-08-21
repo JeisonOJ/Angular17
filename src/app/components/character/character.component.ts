@@ -19,12 +19,13 @@ export class CharacterComponent {
   index = 0;
   animationClass = 'fade-in';
   style = '';
-  @Input() characters: Character[] = [];
+  @Input() characters: Character[] = []; //Input only accepts when the value is passed from the parent component
+  character: Character | undefined;
   
   constructor(private characterService: CharacterServiceService) {
     this.characterService.getCharacters().then((characters) => {
       this.characters = characters;
-      console.log(characters[0].gender==='Male');
+      
     });
   }
 
@@ -35,6 +36,18 @@ export class CharacterComponent {
   showNextCharacter(index: number): void { 
     this.transform(this.index);
   }
+
+  searchCharacters(name: string): void {
+    this.characterService.getCharacters(name).then((characters) => {
+      this.characters = characters
+    });
+  }
+
+  // searchCharacters(name: string): void {
+  //   this.characterService.getCharacters().then((characters) => {
+  //     this.characters = characters.filter((character) => character.name.toLowerCase().includes(name.toLowerCase()));
+  //   });
+  // }
 
   transform(index: number): void {
     this.animationClass = 'fade-out';
